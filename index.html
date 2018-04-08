@@ -142,21 +142,23 @@
 							con nosotros a través de los<br> siguientes medios de comunicacion.</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form action="envio.php" method="post">
 										<div class="field half first">
 											<label for="name">Nombre y Apellidos</label>
-											<input type="text" name="apelname" id="name" />
+											<input type="text" name="apelnom" id="name" required="required"/>
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="text" name="email" id="email" required="required"/>
 										</div>
 										<div class="field">
 											<label for="message">Mensaje</label>
-											<textarea name="mensaje" id="message" rows="5"></textarea>
+											<textarea name="mensaje" id="message" rows="5" required="required"></textarea>
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Enviar</a></li>
+											<!--<li><a href="" class="button submit">Enviar</a></li>-->
+											<li><input type="submit" value="Enviar formulario"></li>
+											<li><input type="Reset" value="Borrar datos"> </li>
 										</ul>
 									</form>
 								</section>
@@ -164,8 +166,9 @@
 									<ul class="contact">
 										<li>
 											<h3>Dirección</h3>
-											<span>Plaza Castilla, s/n, 28020 Madrid</span>
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6070.7967633175795!2d-3.693057429060106!3d40.46645080763663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228555a4aa3f7%3A0x6d64814a101b07a7!2sTorres+Kio!5e0!3m2!1ses!2ses!4v1522591130506" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+											<span>Plaza Castilla, s/n, 28020 Madrid
+												<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6070.7967633175795!2d-3.693057429060106!3d40.46645080763663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228555a4aa3f7%3A0x6d64814a101b07a7!2sTorres+Kio!5e0!3m2!1ses!2ses!4v1522591130506" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+											</span>
 										</li>
 										<li>
 											<h3>Email</h3>
