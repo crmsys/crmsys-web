@@ -1,4 +1,5 @@
 <?php 
+error_reporting(-1);
 require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
 $mail = new PHPMailer();
 
@@ -14,12 +15,12 @@ $mensaje .= "Enviado el " . date('d/m/Y', time());
 $para = 'supp.crmsys@gmail.com'; 
 $asunto = 'Correo Contacto'; 
 
-$mail­>SetFrom($para, 'CRMSYS');
-$mail­>AddAddress($correo_electronico, $apelnombre);
-$mail­>Subject = $asunto;
-$mail­>Body = $mensaje;
+$mail ->From = $para;
+$mail ->AddAddress($correo_electronico);
+$mail ->Subject = $asunto;
+$mail ->Body = $mensaje;
 
-$mail­>Send()
+$mail ->Send();
 
 header("Location:index.php");
 ?> 
