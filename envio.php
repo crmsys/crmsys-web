@@ -4,13 +4,12 @@ require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
 
 $mail = new PHPMailer();
 
-$mail ->SMTPDebug  = 2;
 $mail ->SMTPAuth   = true;
 $mail ->SMTPSecure = "tls";
 $mail ->Host       = "smtp.gmail.com";
 $mail ->Username   = "supp.crmsys@gmail.com";
 $mail ->Password   = "sudoaptgetmoo";
-$mail ->Port       = 465;
+$mail ->Port       = 587;
 $mail ->CharSet = "UTF-8";
 
 $apelnombre = $_POST['apelnom']; 
