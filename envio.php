@@ -4,8 +4,9 @@ require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
 
 $mail = new PHPMailer();
 
+$mail ->SMTPDebug  = 2;
 $mail ->SMTPAuth   = true;
-$mail ->SMTPSecure = "ssl";
+$mail ->SMTPSecure = "tsl";
 $mail ->Host       = "smtp.gmail.com";
 $mail ->Username   = "supp.crmsys@gmail.com";
 $mail ->Password   = "sudoaptgetmoo";
