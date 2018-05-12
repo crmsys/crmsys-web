@@ -9,7 +9,7 @@ $mail ->SMTPSecure = "ssl";
 $mail ->Host       = "smtp.gmail.com";
 $mail ->Username   = "supp.crmsys@gmail.com";
 $mail ->Password   = "sudoaptgetmoo";
-$mail ->Port       = 465;
+$mail ->Port       = 587;
 $mail ->CharSet = "UTF-8";
 
 $apelnombre = $_POST['apelnom']; 
