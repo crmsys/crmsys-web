@@ -42,8 +42,9 @@ if ($mail ->Send()) {
 		   <link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css' />
 		   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js'></script>
 		   <script type='text/javascript'>$.jGrowl('Correo Enviado Correctamente',{theme : 'bien'});</script> 
-		   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E;color: #000;font-size:16px;}</style> "; 
+		   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E;color: #000;font-size:16px;}</style> ";
+	echo $mail ->ErrorInfo;
 }
 
-header("Location:index.php");
+//header("Location:index.php");
 ?> 
