@@ -3,6 +3,9 @@ error_reporting(-1);
 require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
 
 $mail = new PHPMailer();
+
+$mail ->isSMTP();
+$mail ->SMTPDebug  = 2;
 $mail ->SMTPAuth   = true;
 $mail ->SMTPSecure = "tls";
 $mail ->Host       = "smtp.gmail.com";
@@ -43,5 +46,5 @@ if ($mail ->Send()) {
 		   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E;color: #000;font-size:16px;}</style> "; 
 }
 
-header("Location:index.php");
+//header("Location:index.php");
 ?> 
