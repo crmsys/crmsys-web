@@ -4,7 +4,6 @@ require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
 
 $mail = new PHPMailer();
 
-$mail ->IsSMTP();
 $mail ->SMTPDebug  = 2;
 $mail ->SMTPAuth   = true;
 $mail ->SMTPSecure = "tsl";
