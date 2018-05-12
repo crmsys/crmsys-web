@@ -46,5 +46,5 @@ if ($mail ->Send()) {
 		   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E;color: #000;font-size:16px;}</style> "; 
 }
 
-//header("Location:index.php");
+header("Location:index.php");
 ?> 
