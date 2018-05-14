@@ -4,14 +4,16 @@ require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
 
 $mail = new PHPMailer();
 
+$mail ->isSMTP();
 $mail ->SMTPDebug  = 2;
+$mail ->Debugoutput = 'html';
 $mail ->SMTPAuth   = true;
 $mail ->SMTPSecure = "tsl";
 $mail ->Host       = "smtp.gmail.com";
 $mail ->Username   = "supp.crmsys@gmail.com";
 $mail ->Password   = "sudoaptgetmoo";
 $mail ->Port       = 587;
-$mail ->CharSet = "UTF-8";
+$mail ->CharSet    = "UTF-8";
 
 $apelnombre = $_POST['apelnom']; 
 $correo_electronico= $_POST['email']; 
@@ -32,18 +34,19 @@ $mail ->Subject = $asunto;
 $mail ->Body = $mensaje;
 
 if ($mail ->Send()) { 
-    echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    /*echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
 		   <link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css' />
 		   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js'></script>
 		   <script type='text/javascript'>$.jGrowl('Correo Enviado Correctamente',{theme : 'bien'});</script> 
-		   <style type='text/css'>div.jGrowl div.bien {background-color: #77EF6A;color: #000;font-size:16px;}</style> "; 
+		   <style type='text/css'>div.jGrowl div.bien {background-color: #77EF6A;color: #000;font-size:16px;}</style> "; */
+	echo "Mensaje Enviado";
 }else{ 
-    echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    /*echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
 		   <link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css' />
 		   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js'></script>
 		   <script type='text/javascript'>$.jGrowl('Correo Enviado Correctamente',{theme : 'bien'});</script> 
-		   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E;color: #000;font-size:16px;}</style> ";
-	echo $mail ->ErrorInfo;
+		   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E;color: #000;font-size:16px;}</style> ";*/
+	echo "Error: ".$mail ->ErrorInfo;
 }
 
 //header("Location:index.php");
