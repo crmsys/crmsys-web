@@ -3911,28 +3911,3 @@
 			}
 
 		}
-
-p.esc{
-	position: relative; 
-	float: left;
-	background: #5e42a6;
-	color: #fff;
-	font-size: 2.5em;
-}		
-span.cursor{
-	position:absolute;
-    right:0;
-    width:0;
-    background: #5e42a6;
-	border-left: 1px solid #000;
-	animation: escribir 4s steps(59) infinite alternate;
-}
-	
-@keyframes escribir {
-    from { width: 100% }
-    to { width:0}
-}
-
-h1.tituloini{
-	font-size: 5em;
-}

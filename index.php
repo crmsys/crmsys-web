@@ -33,11 +33,15 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<img src="images/logo.png"/><br>
-							<p class="esc">&nbsp;&nbsp;&nbsp;Hacemos que la gestión de tu negocio sea mas eficiente.&nbsp;&nbsp;<span class="cursor">&#160;</span></p><br><br><br>
-							<center><ul class="actions vertical">
+							<img src="images/logo.png" style="width: 40%;height: auto;"/><br>
+							<h3>
+							  <p class="typewrite" data-period="2000" data-type='[ "Hacemos que la gestión de tu negocio sea mas eficiente." ]'>
+								<span class="wrap"></span>
+							  </p>
+							</h3>
+							<div style="position:absolute; top:50%;left:45%;"><ul class="actions vertical">
 								<li><a href="#one" class="button scrolly" style="bottom:-15em;"><span class="fa major fa-chevron-down"></span></a></li>			
-							</ul></center>
+							</ul></div>
 						</div>
 					</section>
 
@@ -167,7 +171,7 @@
 										<li>
 											<h3>Dirección</h3>
 											<span>Plaza Castilla, s/n, 28020 Madrid
-												<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6070.7967633175795!2d-3.693057429060106!3d40.46645080763663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228555a4aa3f7%3A0x6d64814a101b07a7!2sTorres+Kio!5e0!3m2!1ses!2ses!4v1522591130506" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+												<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6070.7967633175795!2d-3.693057429060106!3d40.46645080763663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228555a4aa3f7%3A0x6d64814a101b07a7!2sTorres+Kio!5e0!3m2!1ses!2ses!4v1522591130506" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 											</span>
 										</li>
 										<li>
