@@ -116,7 +116,7 @@ p, ul {
 	font-size:14px; 
 	line-height:1.6;
 }
-p.lead { font-size:17px; background-color:#b74e91;}
+p.lead { font-size:17px; background-color:#b74e91;color:#000000;}
 p.last { margin-bottom:0px;}
 
 ul li {

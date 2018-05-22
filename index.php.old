@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
@@ -147,101 +146,25 @@
 							con nosotros a través de los<br> siguientes medios de comunicacion.</p>
 							<div class="split style1">
 								<section>
-									<?php
-										error_reporting(0);
-										require("PHPMailer-FE_v4.11/_lib/class.phpmailer.php");
-										if (isset($_POST['env'])){
-											if (isset($_POST['captcha'])) {
-												$mail = new PHPMailer();
-
-												$mail ->CharSet = "UTF-8";
-												$mail ->IsHTML(true); 
-
-												$apelnombre = $_POST['apelnom']; 
-												$correo_electronico= $_POST['email']; 
-												$texto = $_POST['mensaje'];
-
-												$mensaje = "<b>Este mensaje fue enviado por: </b>" . $apelnombre . "<br>"; 
-												$mensaje .= "<b>Su e-mail es: </b>" . $correo_electronico . "<br>";
-												$mensaje .= "<b>Su mensaje es: </b>" . $texto . "<br>"; 
-												$mensaje .= "<b>Enviado el: </b>" . date('d/m/Y', time()); 
-
-												$para = 'supp.crmsys@gmail.com'; 
-
-												$mail ->From = $para;
-												$mail ->FromName = "CRMSYS";
-												$mail ->AddAddress($para,"Nuevo Comentario");
-												$mail ->Subject = 'Nueva Consulta (WEB)';
-												$mail ->Body = $mensaje;
-
-												$mailEnv1 = $mail ->Send();
-												
-												//--------------
-												
-												$mail = new PHPMailer();
-
-												$mail ->CharSet = "UTF-8";
-												$mail ->IsHTML(true);
-
-												$mail ->AddEmbeddedImage('images/logo.png', 'imagen');//cargar img
-												$rcss = "assets/css/email.css";
-												$fcss = fopen ($rcss, "r");//abrir archivo css
-												$scss = fread ($fcss, filesize ($rcss));//leer contenido de css
-												fclose ($fcss);
-												$shtml = file_get_contents('email.html');
-												$cuerpo  = str_replace('<style id="estilo"></style>',"<style>$scss</style>",$shtml); 
-
-												$mail ->From = $para;
-												$mail ->FromName = "CRMSYS";
-												$mail ->AddAddress($correo_electronico,$apelnombre);
-												$mail ->Subject = 'Bienvenid@ a CRMSYS';
-												$mail ->Body = $cuerpo;
-
-												$mailEnv2 = $mail ->Send();
-												
-												if($mailEnv1 && $mailEnv2){	
-													echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-														   <link rel='stylesheet' type='text/css' href='jGrowl-master/jquery.jgrowl.min.css' />
-														   <script src='jGrowl-master/jquery.jgrowl.min.js'></script>
-														   <script type='text/javascript'>$.jGrowl('Correo Enviado Correctamente',{theme : 'bien'});</script> 
-														   <style type='text/css'>div.jGrowl div.bien {background-color: #77EF6A;color: #000;font-size:16px;margin:auto;margin-top:30%;margin-left: -3%;}</style> "; 
-												}else{
-													echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-														   <link rel='stylesheet' type='text/css' href='jGrowl-master/jquery.jgrowl.min.css' />
-														   <script src='jGrowl-master/jquery.jgrowl.min.js'></script>
-														   <script type='text/javascript'>$.jGrowl('Correo NO Enviado Correctamente',{theme : 'bien'});</script> 
-														   <style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E ;color: #000;font-size:16px;margin:auto;margin-top:30%;margin-left: -3%;} jGrowl-close {background-color: #77EF6A;}</style> ";	
-												}
-											}else{
-												echo " <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-														<link rel='stylesheet' type='text/css' href='jGrowl-master/jquery.jgrowl.min.css' />
-														<script src='jGrowl-master/jquery.jgrowl.min.js'></script>
-														<script type='text/javascript'>$.jGrowl('No se a Validado el Captcha Correctamente',{theme : 'bien'});</script> 
-														<style type='text/css'>div.jGrowl div.bien {background-color: #FE2E2E ;color: #000;font-size:16px;margin:auto;margin-top:30%;margin-left: -3%;} jGrowl-close {background-color: #77EF6A;}</style> ";	
-											}
-										}
-										header("Location:index.php"); 
-									?>
-									<form action="index.php" method="post">
+									<form action="envio.php" method="post">
 										<div class="field half first">
-											<label for="name">Nombre y Apellidos *</label>
+											<label for="name">Nombre y Apellidos</label>
 											<input type="text" name="apelnom" id="name" required="required"/>
 										</div>
 										<div class="field half">
-											<label for="email">Email *</label>
+											<label for="email">Email</label>
 											<input type="text" name="email" id="email" required="required"/>
 										</div>
 										<div class="field">
-											<label for="message">Mensaje *</label>
-											<textarea name="mensaje" id="message" rows="5" required="required"></textarea><br>
-											<input type="checkbox" id="demo-human" name="captcha" required="required"><label for="demo-human">No soy un Robot *</label>
-											<!--<div class="g-recaptcha" data-sitekey="6Le1aloUAAAAAPp8b2qY2Q__4jNQwO9rAzXfD-KC"></div>-->
+											<label for="message">Mensaje</label>
+											<textarea name="mensaje" id="message" rows="5" required="required"></textarea>
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="Enviar formulario" name="env"></li>
+											<!--<li><a href="" class="button submit">Enviar</a></li>-->
+											<li><input type="submit" value="Enviar formulario"></li>
 											<li><input type="Reset" value="Borrar datos"> </li>
 										</ul>
-										</form>
+									</form>
 								</section>
 								<section>
 									<ul class="contact">
@@ -262,10 +185,11 @@
 										<li>
 											<h3>Redes Sociales</h3>
 											<ul class="icons">
-												<li><a href="https://twitter.com" class="fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="https://www.facebook.com" class="fa-facebook"><span class="label">Facebook</span></a></li>
-												<li><a href="https://github.com" class="fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+												<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
 											</ul>
 										</li>
 									</ul>
